@@ -3,53 +3,28 @@ import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
-  <>
-  <div className="bg-black flex flex-col md:flex-row items-center md:justify-between gap-3 p-4 md:p-6">
-    <div className="flex items-center gap-3">
-      <nav className="bg-white px-3 py-1 rounded-2xl shadow-md font-bold text-blue-500 text-lg">
-        MT
-      </nav>
-      <div className="font-extrabold text-white text-lg tracking-wide"> M.Taha Khan</div>
+  <footer className="fade-in-up border-t border-slate-200/70 bg-white/70 text-slate-900 backdrop-blur-xl">
+    <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div>
+        <div className="display-font text-lg font-bold tracking-wide text-slate-950">Muhammad Taha Khan</div>
+        <p className="mt-1 text-sm text-slate-600">Computer Science Undergraduate | Web Developer</p>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+        <a href="mailto:m.tahaqaisrani@gmail.com" className="transition hover:text-slate-950">m.tahaqaisrani@gmail.com</a>
+        <a href="tel:+923306721738" className="transition hover:text-slate-950">+92 330 6721738</a>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <a href="https://github.com/TAHAqaisrani" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <AiFillGithub size={32} className="text-slate-800 transition hover:text-amber-500" />
+        </a>
+        <a href="https://www.linkedin.com/in/taha-alyas-951376347/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <FaLinkedin size={32} className="text-slate-800 transition hover:text-amber-500" />
+        </a>
+      </div>
     </div>
-
-  <div className="flex flex-col md:flex-row items-center gap-4 mt-3 md:mt-0">
-
-  {/* Social Links */}
-  <div className="flex items-center gap-4">
-    <a
-      href="https://github.com/TAHAqaisrani"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <AiFillGithub
-        size={40}
-        className="text-white hover:text-gray-400 transition-colors duration-300 cursor-pointer"
-      />
-    </a>
-
-    <a
-      href="https://www.linkedin.com/in/taha-alyas-951376347/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="border-l-2 border-white pl-4"
-    >
-      <FaLinkedin
-        size={40}
-        className="text-white hover:text-gray-400 transition-colors duration-300 cursor-pointer"
-      />
-    </a>
-  </div>
-
-  {/* Contact Info */}
-  <p className="text-white hover:text-gray-400 cursor-pointer border-l-2 border-white px-4 py-1">
-    m.tahaqaisrani@gmail.com
-  </p>
-  <p className="text-white hover:text-gray-400 cursor-pointer border-l-2 border-white px-4 py-1">
-    +923306721738
-  </p>
-</div>
-</div>
-</>
+  </footer>
 
   )
 }

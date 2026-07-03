@@ -1,81 +1,139 @@
 import React from "react";
 
+const featuredProjects = [
+  {
+    name: "Pharmacy Management System",
+    stack: "React.js | Vite | Vercel",
+    description:
+      "Full-featured pharmacy management web app for inventory, prescriptions, and billing. Sole developer responsible for UI, component architecture, and deployment.",
+  },
+  {
+    name: "Vehicle Management System",
+    stack: "React.js | Vite | Vercel",
+    description:
+      "Frontend for a vehicle management system with clean UI, form handling, and integration-ready structure.",
+  },
+  {
+    name: "Password Generator",
+    stack: "JavaScript | React.js | Vercel",
+    description:
+      "Interactive password generator with customizable length and character options, focused on hooks and state management.",
+  },
+];
+
 const Main = () => {
   return (
-  <div class="bg-gray-50 font-sans antialiased text-gray-900">
-  
-  <div class="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen px-4 sm:px-8 py-12 md:py-24">
-    
-    <div class="flex-1 max-w-full md:max-w-xl text-center md:text-left mt-12 md:mt-0 md:mr-16 animate-fade-in">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
-        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">M Taha Khan</span>
-      </h1>
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
-        Full Stack Developer &amp; UI/UX Enthusiast
-      </h2>
-      <p class="text-gray-600 text-base sm:text-lg mb-8 max-w-xl">
-        I craft beautiful, functional web experiences that solve real-world problems. Passionate about clean code, user experience, and bringing ideas to life.
-      </p>
+    <div className="text-slate-900">
+      <section className="mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl items-center gap-12 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-16">
+        <div className="max-w-3xl">
+          <p className="fade-in-up mb-5 inline-flex rounded-full border border-amber-400/30 bg-amber-400/15 px-4 py-2 text-sm font-bold text-amber-700 shadow-sm">
+            Muhammad Taha Khan | Computer Science Undergraduate | Web Developer
+          </p>
+          <h1 className="fade-in-up animate-delay-1 display-font text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+            Modern web experiences built with clean code and practical product thinking.
+          </h1>
+          <p className="fade-in-up animate-delay-2 mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+            I build responsive applications with React, JavaScript, Node.js, and modern deployment workflows, backed by real projects and professional MERN experience.
+          </p>
+
+          <div className="fade-in-up animate-delay-3 mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="mailto:m.tahaqaisrani@gmail.com" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 font-semibold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800">
+              Email Me
+            </a>
+            <a href="/contact" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50">
+              View Contact Details
+            </a>
+          </div>
+
+          <div className="fade-in-up animate-delay-4 mt-8 flex flex-wrap gap-3">
+            {[
+              "React",
+              "MERN",
+              "Responsive UI",
+              "Vercel",
+              "REST APIs",
+              "Clean Code",
+            ].map((item) => (
+              <span key={item} className="glass-card rounded-full px-4 py-2 text-sm font-semibold text-slate-700">
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              ["1+ year", "MERN development experience"],
+              ["Multiple", "Deployed projects on Vercel"],
+              ["BS-CS", "5th semester student"],
+            ].map(([value, label], index) => (
+              <article key={value} className={`glass-card fade-in-up rounded-3xl p-5 ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : 'animate-delay-3'}`}>
+                <div className="display-font text-3xl font-bold text-slate-950">{value}</div>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{label}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-lg">
+          <div className="absolute -left-6 top-10 h-24 w-24 rounded-full bg-amber-300/30 blur-3xl" />
+          <div className="absolute -right-4 bottom-8 h-28 w-28 rounded-full bg-sky-300/30 blur-3xl" />
+          <div className="glass-card float-gentle overflow-hidden rounded-[2rem] p-4 shadow-2xl shadow-slate-950/10">
+            <div className="overflow-hidden rounded-[1.5rem] bg-slate-900">
+              <img src="/download.png" alt="Muhammad Taha Khan" className="h-full w-full object-cover" />
+            </div>
+          </div>
+          <div className="glass-card absolute -bottom-4 left-4 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 animate-delay-2 fade-in-up">
+            Full-stack mindset. Frontend polish.
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
+        <div className="mb-8 text-center">
+          <h2 className="display-font text-3xl font-bold text-slate-950 sm:text-4xl">Core Focus</h2>
+          <p className="mt-3 text-slate-600">A mix of academic grounding, practical experience, and shipped projects.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Frontend Development",
+              text: "React, Vite, Tailwind CSS, responsive design, and component-driven UI systems.",
+            },
+            {
+              title: "Backend Development",
+              text: "Node.js, Express.js, PHP, Laravel, RESTful APIs, JWT authentication, and MVC architecture.",
+            },
+            {
+              title: "Problem Solving",
+              text: "Data structures, debugging, clean code, performance optimization, and scalable application design.",
+            },
+          ].map((item, index) => (
+            <article key={item.title} className={`glass-card fade-in-up rounded-3xl p-6 transition duration-300 hover:-translate-y-1 ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : 'animate-delay-3'}`}>
+              <h3 className="display-font text-xl font-bold text-slate-950">{item.title}</h3>
+              <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-slate-950 py-16 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 flex flex-col gap-3 text-center lg:text-left">
+            <h2 className="display-font text-3xl font-bold sm:text-4xl">Featured Projects</h2>
+            <p className="text-slate-300">Selected work from the portfolio and CV.</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredProjects.map((project, index) => (
+              <article key={project.name} className={`fade-in-up rounded-3xl border border-white/10 bg-white/10 p-6 shadow-xl shadow-black/10 backdrop-blur ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : 'animate-delay-3'}`}>
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">{project.stack}</p>
+                <h3 className="display-font mt-3 text-2xl font-bold text-white">{project.name}</h3>
+                <p className="mt-4 leading-7 text-slate-300">{project.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
-    
-    <div class="flex justify-center items-center mt-8 md:mt-0">
-      <div class="w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 rounded-full overflow-hidden 
-                  relative bg-white/20 backdrop-blur-md border border-white/30 
-                  shadow-lg hover:scale-105 hover:shadow-xl
-                  focus:outline-none focus:ring-4 focus:ring-indigo-600 focus:ring-opacity-50
-                  transform transition duration-300 ease-in-out">
-        <img
-          src="/download.png"
-          alt="Taha Khan Profile"
-          class="object-cover w-full h-full"
-        />
-      </div>
-    </div>
-  </div>
-  
-  <div class="py-12 px-4 sm:px-8">
-    <h1 class="text-3xl sm:text-4xl md:text-4xl font-extrabold text-center mt-6">
-      What I Bring To The Table...
-    </h1>
-    <h3 class="text-lg sm:text-xl md:text-2xl text-center font-light text-gray-700 mb-12">
-      A blend of technical expertise and creative problem-solving
-    </h3>
-  
-    <div class="flex flex-col md:flex-row flex-wrap gap-6 justify-center max-w-6xl mx-auto">
-      
-      <div class="p-6 w-full sm:w-80 md:w-96 bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-        <div class="p-4 flex justify-center text-4xl">💻</div>
-        <h1 class="p-1 flex justify-center font-bold text-lg sm:text-xl text-center">
-          Front-End Development
-        </h1>
-        <p class="p-2 flex justify-center text-sm sm:text-base text-center text-gray-600">
-          HTML, TailwindCSS, JS, React
-        </p>
-      </div>
-      
-      <div class="p-6 w-full sm:w-80 md:w-96 bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-        <div class="p-4 flex justify-center text-4xl">💾</div>
-        <h1 class="p-1 flex justify-center font-bold text-lg sm:text-xl text-center">
-          Back-End Development
-        </h1>
-        <p class="p-2 flex justify-center text-sm sm:text-base text-center text-gray-600">
-          Node.js, Express.js, MongoDB
-        </p>
-      </div>
-      
-      <div class="p-6 w-full sm:w-80 md:w-96 bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-        <div class="p-4 flex justify-center text-4xl">🎨</div>
-        <h1 class="p-1 flex justify-center font-bold text-lg sm:text-xl text-center">
-          UI/UX Design
-        </h1>
-        <p class="p-2 flex justify-center text-sm sm:text-base text-center text-gray-600">
-          Figma, Prototyping
-        </p>
-      </div>
-      
-    </div>
-  </div>
-</div>
   );
 };
 

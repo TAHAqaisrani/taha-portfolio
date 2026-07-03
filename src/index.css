@@ -1,1 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
+
+@layer base {
+	:root {
+		color-scheme: light;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		min-width: 320px;
+		font-family: 'Manrope', 'Segoe UI', sans-serif;
+		color: #0f172a;
+		background:
+			radial-gradient(circle at top left, rgba(245, 158, 11, 0.16), transparent 28%),
+			radial-gradient(circle at top right, rgba(14, 165, 233, 0.14), transparent 26%),
+			linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	.display-font {
+		font-family: 'Space Grotesk', 'Manrope', sans-serif;
+	}
+
+	::selection {
+		background: rgba(245, 158, 11, 0.28);
+		color: #0f172a;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+@layer utilities {
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(18px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes soft-float {
+		0%,
+		100% {
+			transform: translateY(0px);
+		}
+
+		50% {
+			transform: translateY(-8px);
+		}
+	}
+
+	.fade-in-up {
+		opacity: 0;
+		animation: fade-up 0.8s ease-out forwards;
+	}
+
+	.animate-delay-1 {
+		animation-delay: 0.1s;
+	}
+
+	.animate-delay-2 {
+		animation-delay: 0.2s;
+	}
+
+	.animate-delay-3 {
+		animation-delay: 0.3s;
+	}
+
+	.animate-delay-4 {
+		animation-delay: 0.4s;
+	}
+
+	.float-gentle {
+		animation: soft-float 6s ease-in-out infinite;
+	}
+
+	.portfolio-shell {
+		position: relative;
+		isolation: isolate;
+	}
+
+	.portfolio-shell::before,
+	.portfolio-shell::after {
+		content: '';
+		position: absolute;
+		inset: auto;
+		pointer-events: none;
+		border-radius: 9999px;
+		filter: blur(72px);
+		opacity: 0.45;
+		z-index: -1;
+	}
+
+	.portfolio-shell::before {
+		top: 2rem;
+		right: 4rem;
+		width: 16rem;
+		height: 16rem;
+		background: rgba(14, 165, 233, 0.28);
+	}
+
+	.portfolio-shell::after {
+		bottom: 8rem;
+		left: -3rem;
+		width: 18rem;
+		height: 18rem;
+		background: rgba(245, 158, 11, 0.22);
+	}
+
+	.glass-card {
+		background: rgba(255, 255, 255, 0.72);
+		border: 1px solid rgba(148, 163, 184, 0.22);
+		box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+		backdrop-filter: blur(18px);
+	}
+}

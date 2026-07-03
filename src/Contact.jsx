@@ -1,102 +1,35 @@
-import { useState } from "react";
-
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      const res = await fetch(
-        "http://localhost:5000/api/contact",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-          }),
-        }
-      );
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setStatus("✅ Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus(`❌ Error: ${data.message || "Unknown error"}`);
-      }
-    } catch (error) {
-      console.error(error);
-      setStatus("❌ Server error, try again later.");
-    }
-  };
-
   return (
-    <>
-    
+    <div className="px-4 py-12 text-slate-900 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center">
+          <p className="fade-in-up text-sm font-semibold uppercase tracking-[0.3em] text-amber-600">Contact</p>
+          <h1 className="fade-in-up animate-delay-1 display-font mt-3 text-4xl font-bold sm:text-5xl">Let&apos;s Build Something Useful</h1>
+          <p className="fade-in-up animate-delay-2 mx-auto mt-4 max-w-3xl text-slate-600">
+            Available for frontend, MERN, and full-stack collaboration. The fastest way to reach me is by email or phone.
+          </p>
+        </div>
 
-      <div className="flex justify-center items-center min-h-[70vh] bg-gray-50 px-4 sm:px-6 md:px-12">
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white shadow-xl rounded-2xl p-4 sm:p-6 md:p-8 w-full max-w-md sm:max-w-lg"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 text-center mb-4 sm:mb-6">
-            Contact Me
-          </h2>
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <a href="mailto:m.tahaqaisrani@gmail.com" className="fade-in-up rounded-3xl bg-slate-950 p-6 text-white shadow-2xl shadow-slate-950/10 transition duration-300 hover:-translate-y-1 hover:shadow-slate-950/20">
+            <p className="text-sm uppercase tracking-[0.25em] text-amber-300">Email</p>
+            <h2 className="display-font mt-3 text-2xl font-bold">m.tahaqaisrani@gmail.com</h2>
+            <p className="mt-2 leading-7 text-slate-300">Best for project inquiries and professional opportunities.</p>
+          </a>
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 rounded-lg w-full p-3 mb-4 sm:mb-5 text-sm sm:text-base transition duration-200"
-            required
-          />
+          <a href="tel:+923306721738" className="glass-card fade-in-up animate-delay-1 rounded-3xl p-6 transition duration-300 hover:-translate-y-1">
+            <p className="text-sm uppercase tracking-[0.25em] text-amber-600">Phone</p>
+            <h2 className="display-font mt-3 text-2xl font-bold text-slate-950">+92 330 6721738</h2>
+            <p className="mt-2 leading-7 text-slate-600">Pakistan-based availability for direct communication.</p>
+          </a>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 rounded-lg w-full p-3 mb-4 sm:mb-5 text-sm sm:text-base transition duration-200"
-            required
-          />
-
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            className="border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 rounded-lg w-full p-3 mb-4 sm:mb-5 text-sm sm:text-base transition duration-200"
-            rows="5"
-            required
-          ></textarea>
-
-          <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-700 active:scale-95 text-white w-full py-3 sm:py-3.5 rounded-lg shadow-md transition-transform duration-200 text-sm sm:text-base"
-          >
-            Send Message
-          </button>
-
-          {status && (
-            <p className="text-center mt-3 sm:mt-4 text-gray-700 text-sm sm:text-base">
-              {status}
-            </p>
-          )}
-        </form>
+          <div className="glass-card fade-in-up animate-delay-2 rounded-3xl p-6">
+            <p className="text-sm uppercase tracking-[0.25em] text-amber-600">Location</p>
+            <h2 className="display-font mt-3 text-2xl font-bold text-slate-950">Pakistan</h2>
+            <p className="mt-2 leading-7 text-slate-600">Open to remote client work and software house opportunities.</p>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

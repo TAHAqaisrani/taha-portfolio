@@ -7,22 +7,18 @@ import Skills from './Skills';
 import Contact from './Contact';
 function App() {
   return (
-    <>
-    
-    
+    <div className="portfolio-shell min-h-screen text-slate-900">
       <Header />
-      <main className="min-h-[70vh]">
+      <main>
         <Routes>
           <Route path="/" element={<MainBody />} />    
           <Route path="/about" element={<About />} />  
           <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />{/* Contact */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
-
-
-    </>
+    </div>
   );
 }
 
