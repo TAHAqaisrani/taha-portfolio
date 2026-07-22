@@ -629,7 +629,7 @@ const About = () => {
 
             <a
 
-              href="/projects"
+              href="https://www.github.com/tahaqaisrani"
 
               className="rounded-full border border-white px-10 py-4 font-semibold transition-all duration-300 hover:bg-white hover:text-slate-900"
 
