@@ -137,7 +137,7 @@ export default function Contact() {
 
               {status === "success" && (
                 <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/30 p-4 text-emerald-800 dark:text-emerald-400 text-sm">
-                  🎉 Thank you! Your message has been sent successfully.
+                   Thank you! Your message has been sent successfully.
                 </div>
               )}
 
