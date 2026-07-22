@@ -41,7 +41,7 @@ const skills = [
   {
     name: "Express.js",
     level: "Backend",
-    icon: <SiExpress className="text-slate-700" size={50} />,
+    icon: <SiExpress className="text-slate-700 dark:text-slate-300" size={50} />,
   },
   {
     name: "PHP",
@@ -71,7 +71,7 @@ const skills = [
   {
     name: "Git & GitHub",
     level: "Tools",
-    icon: <FaGithub className="text-gray-700" size={50} />,
+    icon: <FaGithub className="text-gray-700 dark:text-slate-300" size={50} />,
   },
   {
     name: "Postman",
@@ -86,7 +86,7 @@ const skills = [
   {
     name: "Linux Basics",
     level: "Deployment",
-    icon: <SiLinux className="text-slate-800" size={50} />,
+    icon: <SiLinux className="text-slate-800 dark:text-slate-300" size={50} />,
   },
   {
     name: "REST APIs",
@@ -97,11 +97,11 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="px-4 py-12 text-slate-900 sm:px-6 lg:px-8">
+    <div className="px-4 py-12 text-slate-900 dark:text-slate-100 transition-colors duration-300 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl text-center">
-        <p className="fade-in-up text-sm font-semibold uppercase tracking-[0.3em] text-amber-600">Technical Skills</p>
-        <h1 className="fade-in-up animate-delay-1 display-font mt-3 text-4xl font-bold sm:text-5xl">Tools I Use To Build</h1>
-        <p className="fade-in-up animate-delay-2 mx-auto mt-4 max-w-3xl text-slate-600">
+        <p className="fade-in-up text-sm font-semibold uppercase tracking-[0.3em] text-amber-600 dark:text-amber-400">Technical Skills</p>
+        <h1 className="fade-in-up animate-delay-1 display-font mt-3 text-4xl font-bold sm:text-5xl dark:text-white">Tools I Use To Build</h1>
+        <p className="fade-in-up animate-delay-2 mx-auto mt-4 max-w-3xl text-slate-600 dark:text-slate-400">
           Frontend, backend, databases, architecture, deployment, and development tools aligned with my CV and project experience.
         </p>
       </div>
@@ -110,11 +110,11 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <article key={skill.name} className={`glass-card fade-in-up group rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:shadow-2xl ${index % 4 === 0 ? 'animate-delay-1' : index % 4 === 1 ? 'animate-delay-2' : index % 4 === 2 ? 'animate-delay-3' : 'animate-delay-4'}`}>
             <div className="flex items-center justify-between gap-4">
-              <div className="rounded-2xl bg-slate-950/5 p-3 transition group-hover:bg-slate-950/10">{skill.icon}</div>
-              <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">{skill.level}</span>
+              <div className="rounded-2xl bg-slate-950/5 dark:bg-white/5 p-3 transition group-hover:bg-slate-950/10 dark:group-hover:bg-white/10">{skill.icon}</div>
+              <span className="rounded-full bg-amber-100 dark:bg-amber-950/40 px-3 py-1 text-xs font-semibold text-amber-800 dark:text-amber-400">{skill.level}</span>
             </div>
-            <h2 className="display-font mt-5 text-xl font-bold text-slate-950">{skill.name}</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
+            <h2 className="display-font mt-5 text-xl font-bold text-slate-950 dark:text-white">{skill.name}</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
               Practical experience applying this in deployed projects and day-to-day development work.
             </p>
           </article>
