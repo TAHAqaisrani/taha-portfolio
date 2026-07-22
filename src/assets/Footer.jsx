@@ -19,7 +19,7 @@ const Footer = () => {
         <a href="https://github.com/TAHAqaisrani" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <AiFillGithub size={32} className="text-slate-800 dark:text-slate-200 transition hover:text-amber-500 dark:hover:text-amber-400" />
         </a>
-        <a href="https://www.linkedin.com/in/taha-alyas-951376347/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/taha-qaisrani-dev-055841328/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <FaLinkedin size={32} className="text-slate-800 dark:text-slate-200 transition hover:text-amber-500 dark:hover:text-amber-400" />
         </a>
       </div>
